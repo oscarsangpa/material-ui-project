@@ -4,13 +4,16 @@ import { CATEGORIES } from "../assets/categories"
 const Form = () => {
   return (
     <form>
-        <FormControl>
+        <FormControl fullWidth>
             <InputLabel>Category</InputLabel>
             <Select
-                label="category"
+                label="Category"
                 >
                     {CATEGORIES.map(category => (
-                        <MenuItem key={category.value} value={category.value}>
+                        <MenuItem 
+                            key={category.value} 
+                            value={category.value}
+                        >
                         {category.label}
                         </MenuItem>
                     ))}
