@@ -1,16 +1,10 @@
 import {FormControl, Select, InputLabel, MenuItem, Box, Button} from "@mui/material"
 import { useEffect} from "react"
 import { CATEGORIES } from "../assets/categories"
-import useGetNews from "../hooks/useGetNews"
 import useNews from "../hooks/useNews"
 
 const Form = () => {
     const { handleChangeCategory, category } = useNews()
-    const {refreshNews} = useGetNews()
-
-    useEffect(() => {
-        refreshNews(category)
-    }, [category])
 
   return (
     <form>
