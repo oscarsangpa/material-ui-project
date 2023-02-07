@@ -18,7 +18,10 @@ export const NewsList = () => {
             Breaking News
         </Typography>
 
-        <Grid>
+        <Grid 
+            container
+            spacing={2}
+        >
             {news.map(newMap => (
                 <News
                     key={newMap.url}

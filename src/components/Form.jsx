@@ -1,5 +1,4 @@
-import {FormControl, Select, InputLabel, MenuItem, Box, Button} from "@mui/material"
-import { useEffect} from "react"
+import {FormControl, Select, InputLabel, MenuItem} from "@mui/material"
 import { CATEGORIES } from "../assets/categories"
 import useNews from "../hooks/useNews"
 
@@ -25,15 +24,6 @@ const Form = () => {
                     ))}
             </Select>
 
-            <Box sx={{marginTop: 2}}>
-            <Button
-                fullWidth
-                variant="contained"
-                color="primary"
-            >
-                Search News
-            </Button>
-            </Box>
         </FormControl>
     </form>
   )
