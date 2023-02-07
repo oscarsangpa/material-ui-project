@@ -1,8 +1,12 @@
+import useNews from '../hooks/useNews'
 import { Pagination } from '@mui/material'
 import { Stack } from '@mui/system'
-import React from 'react'
 
 export const NewsPagination = () => {
+    const { totalNews } = useNews()
+
+    const totalPages = Math.ceil(totalNews /20)
+
   return (
     <Stack
         sx={{
@@ -14,7 +18,7 @@ export const NewsPagination = () => {
         alignItems="center"
     >
         <Pagination
-            count={3}
+            count={totalPages}
             color="primary"
         >
 

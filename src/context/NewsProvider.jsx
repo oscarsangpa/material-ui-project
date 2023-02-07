@@ -8,7 +8,7 @@ const NewsProvider = ({children}) => {
     const [category, setCategory] = useState("general")
     const [news, setNews] = useState([])
     const [page, setPage] = useState(1)
-    const [totalPage, setTotalPage] = useState(0) 
+    const [totalNews, setTotalNews] = useState(0) 
 
     const handleChangeCategory = (e) => {
         setCategory(e.target.value)
@@ -20,7 +20,7 @@ const NewsProvider = ({children}) => {
         
             const { data } = await axios(url)
             setNews(data.articles)
-            setTotalPage(data.totalResults)
+            setTotalNews(data.totalResults)
     
         }
         refreshNews()
@@ -34,7 +34,8 @@ const NewsProvider = ({children}) => {
             value={{
                 category,
                 handleChangeCategory,
-                news
+                news,
+                totalNews
             }}    
         >
             {children}

@@ -7,7 +7,6 @@ import { NewsPagination } from "./NewsPagination"
 export const NewsList = () => {
     const {news} = useNews()
 
-    console.log(news)
   return (
     <>
         <Typography
