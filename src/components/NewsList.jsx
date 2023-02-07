@@ -2,6 +2,7 @@ import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
 import useNews from "../hooks/useNews"
 import { News } from "./News"
+import { NewsPagination } from "./NewsPagination"
 
 export const NewsList = () => {
     const {news} = useNews()
@@ -29,6 +30,7 @@ export const NewsList = () => {
                 />
             ))}
         </Grid>
+        <NewsPagination/>
     </>
   )
 }
