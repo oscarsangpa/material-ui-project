@@ -18,6 +18,8 @@ export const NewsList = () => {
             Breaking News
         </Typography>
 
+        <NewsPagination/>
+        
         <Grid 
             container
             spacing={2}

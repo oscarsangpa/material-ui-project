@@ -14,18 +14,37 @@ const NewsProvider = ({children}) => {
         setCategory(e.target.value)
     } 
 
+    const handleChangePage = (e, value) => {
+        setPage(value)
+    }
+
     useEffect(() => {
-        const refreshNews = async() => {
+        const APICall = async() => {
             const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`
         
             const { data } = await axios(url)
             setNews(data.articles)
             setTotalNews(data.totalResults)
+            setPage(1)
     
         }
-        refreshNews()
+        APICall()
         
     }, [category])
+
+    useEffect(() => {
+        const APICall = async() => {
+            const url = `https://newsapi.org/v2/top-headlines?country=us&page=${page}&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`
+        
+            const { data } = await axios(url)
+            setNews(data.articles)
+            setTotalNews(data.totalResults)
+
+    
+        }
+        APICall()
+        
+    }, [page])
 
 
 
@@ -35,7 +54,9 @@ const NewsProvider = ({children}) => {
                 category,
                 handleChangeCategory,
                 news,
-                totalNews
+                totalNews,
+                handleChangePage,
+                page
             }}    
         >
             {children}
